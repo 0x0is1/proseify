@@ -1,0 +1,16 @@
+.category {
+    padding: 0 20px;
+}
+
+.category .cards {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    row-gap: 20px;
+    color: rgb(32, 128, 136);
+}
+
+@media only screen and (max-width: 600px) {
+  .category .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

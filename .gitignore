@@ -1,0 +1,8 @@
+backend/node_modules
+src/node_modules
+.vscode
+package-lock.json
+backend/package-lock.json
+src/package-lock.json
+backend/logs/error.log
+node_modules
