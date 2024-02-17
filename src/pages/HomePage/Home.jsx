@@ -4,15 +4,15 @@ import APIFetch from "../../utils/APIFetch";
 import "./Home.css";
 import Category from "./components/Category/Category";
 
-const Home = () => {
+const Home = ({langidx}) => {
   const [resp, setResp] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
-      const data = await APIFetch(`home?limit=100&lang=0`);
+      const data = await APIFetch(`home?limit=50&lang=${langidx}`);
       setResp(data);
     };
     fetchData();
-  }, []);
+  }, [langidx]);
 
   return (
     <div className="home">
