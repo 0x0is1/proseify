@@ -10,11 +10,27 @@ const Category = ({ data, ctype }) => {
       </div>
       <div className="cards">
         {ctype === 0
-          ? data.list.map((card, index) => {
-              return <Card key={index} data={card} ctype={ctype}/>;
+          ? data.list.map((card, index, array) => {
+              return (
+                <Card
+                  key={index}
+                  data={card}
+                  ctype={ctype}
+                  array={array}
+                  index={index}
+                />
+              );
             })
-          : data.data.map((card, index) => {
-              return <Card key={index} data={card} ctype={ctype}/>;
+          : data.data.map((card, index, array) => {
+              return (
+                <Card
+                  key={index}
+                  data={card}
+                  ctype={ctype}
+                  array={array}
+                  index={index}
+                />
+              );
             })}
       </div>
     </div>

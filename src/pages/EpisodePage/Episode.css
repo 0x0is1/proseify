@@ -4,3 +4,23 @@
     align-items: center;
     justify-content: center;
 }
+
+.ep-data {
+  padding: 20px;
+}
+
+.button-container {
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.prev-button-top,
+.next-button-top,
+.prev-button,
+.next-button {
+    width: 10px;
+  flex: 1;
+  margin: 0 10px;
+}

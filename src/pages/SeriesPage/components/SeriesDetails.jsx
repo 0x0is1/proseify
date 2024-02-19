@@ -19,7 +19,7 @@ const SeriesDetails = ({ data }) => {
             {data.summary}
           </span>
           <div className="artists">
-            Subscribers : {data.subscription.subscribers}
+            Subscribers : {data.subscription ? data.subscription.subscribers : 0}
           </div>
         </div>
         <div className="btns">

@@ -3,12 +3,19 @@ import { useNavigate } from "react-router-dom";
 import { Skeleton } from "@mui/material";
 import "./Card.css";
 
-const Card = ({ data, ctype }) => {
+const Card = ({ data, ctype, array, index }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const navigate = useNavigate();
 
-  function handleCard(sid) {
-    ctype === 0 ? navigate(`/series/${sid}`) : navigate(`/episode/${sid}`);
+  function handleCard() {
+    if (ctype === 0) {
+      navigate(`/series/${data.attributes.slug}`);
+    } else {
+      navigate(`/episode/${data.attributes.pratilipiId}`, {
+        state: { earray: array, eidx: index },
+        replace: true
+      });
+    }
   }
 
   function handleImageLoad() {
@@ -16,12 +23,7 @@ const Card = ({ data, ctype }) => {
   }
 
   return (
-    <div
-      className="card"
-      onClick={() =>
-        handleCard(`${ctype===0 ? data.attributes.slug : data.attributes.pratilipiId }`)
-      }
-    >
+    <div className="card" onClick={handleCard}>
       <div className="album-image">
         {data.attributes ? (
           <img
@@ -38,9 +40,7 @@ const Card = ({ data, ctype }) => {
       {!imageLoaded && <Skeleton variant="text" width={160} height={24} />}
       {!imageLoaded && <Skeleton variant="text" width={160} height={20} />}
       {imageLoaded && (
-        <div className="track-name">
-          { data.attributes.displayTitle }
-        </div>
+        <div className="track-name">{data.attributes.displayTitle}</div>
       )}
       {imageLoaded && data.attributes.displayCategory && (
         <div className="artists">{data.attributes.displayCategory}</div>
