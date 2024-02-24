@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const SeriesDetails = ({ data }) => {
   const [liked, setLiked] = useState(false);
-  const navigate = useNavigate();
   return (
     <div className="album-details">
       <div className="banner">
@@ -23,9 +22,6 @@ const SeriesDetails = ({ data }) => {
           </div>
         </div>
         <div className="btns">
-          <div className="play-button" onClick={null}>
-            Read
-          </div>
           <div
             className="like-button"
             id={liked}
