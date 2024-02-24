@@ -23,7 +23,8 @@
     "start": "concurrently \"cd backend && npm start\" \"set PORT=3006 && react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "install:backend": "cd backend && npm start"
   },
   "eslintConfig": {
     "extends": [
