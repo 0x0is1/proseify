@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const SeriesDetails = ({ data }) => {
   const [liked, setLiked] = useState(false);

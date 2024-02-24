@@ -20,7 +20,7 @@
 .next-button-top,
 .prev-button,
 .next-button {
-    width: 10px;
+  max-width: fit-content;
   flex: 1;
   margin: 0 10px;
 }
