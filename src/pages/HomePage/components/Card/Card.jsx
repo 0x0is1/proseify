@@ -9,7 +9,7 @@ const Card = ({ data, ctype, array, index }) => {
 
   function handleCard() {
     if (ctype === 0) {
-      navigate(`/series/${data.attributes.slug}`);
+      navigate(`/series/${data.attributes.seriesId}`);
     } else {
       navigate(`/episode/${data.attributes.pratilipiId}`, {
         state: { earray: array, eidx: index },
